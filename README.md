@@ -35,6 +35,7 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 ### Installation
 - Documentation: https://go.dev/doc/
 - Download: https://go.dev/doc/install
+- Youtube: https://www.youtube.com/playlist?list=PLXQpH_kZIxTWUe-Ee-DZEX5gfeoo4tHV6
 
 ### Basics
 1. Hello World Program
