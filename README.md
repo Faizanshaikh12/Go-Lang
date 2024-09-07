@@ -41,3 +41,5 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 1. Hello World Program
 2. Simple Values
 3. Variables
+4. Constants
+5. For
