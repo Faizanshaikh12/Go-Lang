@@ -44,3 +44,4 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 4. Constants
 5. For
 6. If Else
+7. Switch Statement
