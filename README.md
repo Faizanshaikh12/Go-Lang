@@ -49,3 +49,4 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 9. Slices
 10. Maps
 11. Range
+12. Functions
