@@ -47,3 +47,4 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 7. Switch Statement
 8. Arrays
 9. Slices
+10. Maps
