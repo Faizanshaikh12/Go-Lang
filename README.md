@@ -52,3 +52,4 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 12. Functions
 13. Variadic Functions
 14. Closures
+15. Pointers
