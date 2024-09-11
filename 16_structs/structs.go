@@ -5,11 +5,17 @@ import (
 	"time"
 )
 
+type customer struct {
+	name  string
+	phone string
+}
+
 type order struct {
 	id        string
 	amount    float32
 	status    string
 	createdAt time.Time // nanosecond precision
+	customer
 }
 
 // receiver type
@@ -27,6 +33,10 @@ func newOrder(id string, amount float32, status string) *order {
 		amount:    100,
 		status:    "Paid",
 		createdAt: time.Now(),
+		customer: customer{
+			name:  "Faizan",
+			phone: "9664979557",
+		},
 	}
 
 	return &order1
