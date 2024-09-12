@@ -54,3 +54,4 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 14. Closures
 15. Pointers
 16. Structs, Struct Embedding
+17. Interfaces
