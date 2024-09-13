@@ -57,4 +57,4 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 17. Interfaces
 18. Enums
 19. Generics
-20. Goroutines
+20. Goroutines, WaitGroup
