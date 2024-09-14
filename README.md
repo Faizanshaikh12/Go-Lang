@@ -59,3 +59,4 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 19. Generics
 20. Goroutines, WaitGroup
 21. Channels
+22. Mutex
