@@ -61,3 +61,14 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 21. Channels
 22. Mutex
 23. Files
+24. Packages
+
+
+Build Package
+`go mod init "github package"`
+
+Install Package
+`go get "github package"`
+
+Fix Package
+`go mod tidy"`
