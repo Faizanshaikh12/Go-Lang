@@ -65,13 +65,19 @@ Go was created at Google in 2007, and since then, engineering teams across Googl
 
 
 Build Package
-`go mod init "github package"`
+```bash
+go mod init "github package"
+```
 
 Install Package
-`go get "github package"`
+```bash 
+go get "github package"
+```
 
 Fix Package
-`go mod tidy"`
+```bash 
+go mod tidy
+```
 
 ### Projects
 1. [CLI To-Do List](/projects/go_todo/TODOLIST.md)

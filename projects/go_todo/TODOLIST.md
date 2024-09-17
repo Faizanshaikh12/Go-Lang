@@ -1,6 +1,5 @@
 # CLI To-Do List
 
-```
 Goal: Build a command-line to-do list manager.
 
 Features:
@@ -9,7 +8,6 @@ Mark tasks as complete or incomplete.
 Persist data using a JSON file.
 
 Learning: File I/O, struct management, basic command-line arguments.
-```
 
 Create a new directory for your project:
 ```bash
