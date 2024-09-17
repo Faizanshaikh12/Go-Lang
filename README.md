@@ -81,3 +81,4 @@ go mod tidy
 
 ### Projects
 1. [CLI To-Do List](/projects/go_todo/TODOLIST.md)
+2. [URL Shortener](/projects/url-shortener/URL-SHORTENER.md)
