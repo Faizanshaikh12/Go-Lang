@@ -72,3 +72,6 @@ Install Package
 
 Fix Package
 `go mod tidy"`
+
+### Projects
+1. [CLI To-Do List](/projects/go_todo/TODOLIST.md)
