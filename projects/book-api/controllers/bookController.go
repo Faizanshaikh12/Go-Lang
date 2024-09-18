@@ -6,6 +6,7 @@ import (
 	"strconv"
 
 	"book-api/database"
+	"book-api/helpers"
 	"book-api/models"
 
 	"github.com/go-playground/validator/v10"
@@ -24,7 +25,8 @@ var validate = validator.New()
 func GetBooks(w http.ResponseWriter, r *http.Request) {
 	var books []models.Book
 	database.DB.Find(&books)
-	json.NewEncoder(w).Encode(books)
+	helpers.SendSuccessResponse(w, books, "Books fetched successfully", http.StatusOK)
+	// json.NewEncoder(w).Encode(books)
 }
 
 // Add a new book
@@ -43,12 +45,12 @@ func CreateBook(w http.ResponseWriter, r *http.Request) {
 	// Validate request body
 	err := validate.Struct(book)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		helpers.SendErrorResponse(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
 	database.DB.Create(&book)
-	json.NewEncoder(w).Encode(book)
+	helpers.SendSuccessResponse(w, book, "Book created successfully", http.StatusCreated)
 }
 
 // Fetch a single book by ID
@@ -64,18 +66,18 @@ func GetBook(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	id, err := strconv.Atoi(params["id"]) // Validate that 'id' is an integer
 	if err != nil || id <= 0 {
-		http.Error(w, "Invalid book ID", http.StatusBadRequest)
+		helpers.SendErrorResponse(w, "Invalid book ID", http.StatusBadRequest)
 		return
 	}
 
 	var book models.Book
 	result := database.DB.First(&book, id)
 	if result.Error != nil {
-		http.Error(w, "Book not found", http.StatusNotFound)
+		helpers.SendErrorResponse(w, "Book not found", http.StatusNotFound)
 		return
 	}
 
-	json.NewEncoder(w).Encode(book)
+	helpers.SendSuccessResponse(w, book, "Book fetched successfully", http.StatusOK)
 }
 
 // Update a book by ID
@@ -92,14 +94,14 @@ func UpdateBook(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	id, err := strconv.Atoi(params["id"]) // Validate 'id'
 	if err != nil || id <= 0 {
-		http.Error(w, "Invalid book ID", http.StatusBadRequest)
+		helpers.SendErrorResponse(w, "Invalid book ID", http.StatusBadRequest)
 		return
 	}
 
 	var book models.Book
 	result := database.DB.First(&book, id)
 	if result.Error != nil {
-		http.Error(w, "Book not found", http.StatusNotFound)
+		helpers.SendErrorResponse(w, "Book not found", http.StatusNotFound)
 		return
 	}
 	json.NewDecoder(r.Body).Decode(&book)
@@ -107,12 +109,12 @@ func UpdateBook(w http.ResponseWriter, r *http.Request) {
 	// Validate request body
 	bodyErr := validate.Struct(book)
 	if bodyErr != nil {
-		http.Error(w, bodyErr.Error(), http.StatusBadRequest)
+		helpers.SendErrorResponse(w, bodyErr.Error(), http.StatusBadRequest)
 		return
 	}
 
 	database.DB.Save(&book)
-	json.NewEncoder(w).Encode(book)
+	helpers.SendSuccessResponse(w, book, "Book updated successfully", http.StatusOK)
 }
 
 // Delete a book by ID
@@ -127,10 +129,10 @@ func DeleteBook(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	id, err := strconv.Atoi(params["id"]) // Validate 'id'
 	if err != nil || id <= 0 {
-		http.Error(w, "Invalid book ID", http.StatusBadRequest)
+		helpers.SendErrorResponse(w, "Invalid book ID", http.StatusBadRequest)
 		return
 	}
-
 	database.DB.Delete(&models.Book{}, id)
-	w.WriteHeader(http.StatusNoContent)
+	helpers.SendSuccessResponse(w, nil, "Book deleted successfully", http.StatusNoContent)
+
 }

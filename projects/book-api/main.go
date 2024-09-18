@@ -33,8 +33,8 @@ func main() {
 	r.HandleFunc("/books", controllers.GetBooks).Methods("GET")
 	r.HandleFunc("/books", controllers.CreateBook).Methods("POST")
 	r.HandleFunc("/books/{id}", controllers.GetBook).Methods("GET")
-	r.HandleFunc("/books/{id}", controllers.GetBook).Methods("PUT")
-	r.HandleFunc("/books/{id}", controllers.GetBook).Methods("DELEETE")
+	r.HandleFunc("/books/{id}", controllers.UpdateBook).Methods("PUT")
+	r.HandleFunc("/books/{id}", controllers.DeleteBook).Methods("DELETE")
 
 	// Swagger UI route
 	r.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
