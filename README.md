@@ -84,3 +84,4 @@ go mod tidy
 2. [URL Shortener](/projects/url-shortener/URL-SHORTENER.md)
 2. [Weather CLI](/projects/weather-cli/WEATHER-CLI.md)
 2. [Chat Server](/projects/chat-server/CHAT-SERVER.md)
+2. [Book Store API](/projects/book-api/BOOK-STORE-API.md)
